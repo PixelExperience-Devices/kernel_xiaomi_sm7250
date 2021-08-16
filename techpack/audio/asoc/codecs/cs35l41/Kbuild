@@ -86,7 +86,7 @@ INCS +=		$(COMMON_INC) \
 
 EXTRA_CFLAGS += $(INCS)
 
-ifeq ($(CONFIG_ARCH_LITO), y)
+ifeq ($(TARGET_PRODUCT), monet)
 	CDEFINES += -DCONFIG_TARGET_PRODUCT_MONET
 endif
 
