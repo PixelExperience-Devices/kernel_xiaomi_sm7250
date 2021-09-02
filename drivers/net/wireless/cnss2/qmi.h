@@ -226,4 +226,16 @@ void cnss_unregister_ims_service(struct cnss_plat_data *plat_priv) {}
 
 #endif /* CONFIG_CNSS2_QMI */
 
+#ifdef CONFIG_CNSS2_DEBUG
+static inline u32 cnss_get_host_build_type(void)
+{
+	return QMI_HOST_BUILD_TYPE_PRIMARY_V01;
+}
+#else
+static inline u32 cnss_get_host_build_type(void)
+{
+	return QMI_HOST_BUILD_TYPE_SECONDARY_V01;
+}
+#endif
+
 #endif /* _CNSS_QMI_H */
